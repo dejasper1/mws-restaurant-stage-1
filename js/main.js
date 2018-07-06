@@ -89,18 +89,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
 /**
  * Update page and map for current restaurants.
@@ -164,11 +152,11 @@ createRestaurantHTML = (restaurant) => {
   image.height = "155"
   image.src = DBHelper.imageUrlForRestaurant(restaurant) + '-sm.jpg';
   image.className = 'restaurant-img';
-  image.alt = DBHelper.imageNameForRestaurant(restaurant);
+  image.alt = DBHelper.imageNameForRestaurant(restaurant) + ' Restaurant';
 
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
